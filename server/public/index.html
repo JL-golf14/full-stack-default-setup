@@ -2,31 +2,40 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <!-- NOTE: Scripts -->
-    <script src="vendors/angular.min.js" charset="utf-8"></script><!-- NOTE: Backup for link fail
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script> -->
+    <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="vendors/angular-route.min.js" charset="utf-8"></script>
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js"></script> --><!-- NOTE: Angular Material -->
-
-    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> <!-- NOTE: jQuery for Bootstrap -->
-
     <script src="scripts/client.js" charset="utf-8"></script>
-    <!-- <script src="scripts/factories/one.factory.js" charset="utf-8"></script>
-    <script src="scripts/controllers/one.controller.js" charset="utf-8"></script>
-    <script src="scripts/controllers/two.controller.js" charset="utf-8"></script>
-    <script src="scripts/controllers/three.controller.js" charset="utf-8"></script> -->
+    <script src="scripts/factories/salary.factory.js" charset="utf-8"></script>
+    <script src="scripts/controllers/newEmployees.controller.js" charset="utf-8"></script>
+    <script src="scripts/controllers/tableEmployees.controller.js" charset="utf-8"></script>
+</head>
+<body ng-app="App">
 
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <link rel="stylesheet" href="/styles/styles.css">
-    <!-- NOTE: END Scripts -->
-    <title>title</title>
-  </head>
-  <body ng-app="IndexApp"> <!-- NOTE: 'App' matched with client.js -->
-<header class="jumbotron text-center" ng-include="'views/templates/nav.html'"></header>
-<h1>Default-Stack</h1>
-<nav ng-include=" ''/views/templates/nav.html'"></nav>
+<header ng-include="'/views/templates/nav.html'"></header>
+
+
+  <!-- <h1>Enter information on employee cost calculator!</h1>
+
+  <label type="text" name="firstName"></label>
+  <input ng-model="nec.newWorker.first_name" placeholder="first Name"></input>
+
+  <label type="text" name="lastName"></label>
+  <input ng-model="nec.newWorker.last_name" placeholder="Last Name" id="lastName" class="employeeFormInput"></input>
+
+  <label type="text" name="idNumber"></label>
+  <input ng-model="nec.newWorker.employee_id" placeholder="ID Number" id="idNumber" class="employeeFormInput"></input>
+
+  <label type="text" name="jobTitle"></label>
+  <input ng-model="nec.newWorker.job_title" placeholder="Job Title" id="jobTitle" class="employeeFormInput"></input>
+
+  <label type="text" name="annualSalary"></label>
+  <input type="number" ng-model="nec.newWorker.annual_salary" placeholder="Annual Salary" id="annualSalary" class="employeeFormInput"></input>
+
+  <button ng-click="nec.addEmployee()">Submit</button> -->
+
 <main ng-view></main>
+
+
+
   </body>
-</html>
+  </html>

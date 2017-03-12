@@ -1,0 +1,65 @@
+
+
+
+
+
+
+
+
+
+
+
+<label type="text" name="firstName"></label>
+<input ng-model="nec.newWorker.first_name" placeholder="first Name"></input>
+
+<label type="text" name="lastName"></label>
+<input ng-model="nec.newWorker.last_name" placeholder="Last Name" id="lastName" class="employeeFormInput"></input>
+
+<label type="text" name="idNumber"></label>
+<input ng-model="nec.newWorker.employee_id" placeholder="ID Number" id="idNumber" class="employeeFormInput"></input>
+
+<label type="text" name="jobTitle"></label>
+<input ng-model="nec.newWorker.job_title" placeholder="Job Title" id="jobTitle" class="employeeFormInput"></input>
+
+<label type="text" name="annualSalary"></label>
+<input type="number" ng-model="nec.newWorker.annual_salary" placeholder="Annual Salary" id="annualSalary" class="employeeFormInput"></input>
+
+<button ng-click="nec.addEmployee()">Submit</button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table>
+<thead>
+  <tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>job title</th>
+<th>job id</th>
+<th>annual Salary</th>
+<th>worked since</th>
+</tr>
+</thead>
+<tbody>
+  <tr ng-repeat="table in nec.employee.list">
+
+    <td>{{table.first_name}}</td>
+    <td>{{table.last_name}}</td>
+    <td>{{table.job_title}}</td>
+    <td>{{table.job_id}}</td>
+    <td>{{table.annual_salary}}</td>
+    <td>{{table.created_at| date:'yyyy-MM-dd'}}</td>
+  </tr>
+</tbody>
+</table>

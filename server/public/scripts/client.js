@@ -1,17 +1,25 @@
-var AppVariable = angular.module('IndexApp', ['ngRoute']);
-// NOTE: IndexApp matched to index.html/ng-app="IndexApp"
-// NOTE: ngRoute is always matched to index.html/ng-view AND is dependency of 'angular-route.js' script
-// NOTE: AppVariable is set for
-console.log("client.js loaded");
-AppVariable.config(['$routeProvider', function($routeProvider) {
+var App = angular.module('App', ['ngRoute']);
+console.log("client JS started");
+App.config(['$routeProvider', function($routeProvider) {
+
   $routeProvider
-  .when('/defaultPage', {
-    defaultUrl: '/views/templates/defaultpage.html',
-    controller: 'DefaultController',
-    controllerAs: 'dc'
-  })  // NOTE: semi-colon not needed here
-  // .otherwise({
-  //   redirectTo: 'index'
-  // });  // NOTE: but semi-colon is needed here
+    .when('/newEmployees', {
+      templateUrl: '/views/templates/newemployeeview.html',
+      controller: 'NewEmployeeController',
+      controllerAs: 'nec'
+    })
+    .when('/tableEmployees', {
+      templateUrl: '/views/templates/tableemployeesview.html',
+      controller: 'TableEmployeesController',
+      controllerAs: 'tec'
+    })
+    .when('/expenses', {
+      templateUrl: '/views/templates/expensesview.html',
+      controller: 'ExpensesController',
+      controllerAs: 'ec'
+    })
+    .otherwise({
+      redirectTo: 'newEmployees'
+    });
+
 }]);
-// NOTE: END OF CODE

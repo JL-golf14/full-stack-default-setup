@@ -1,31 +1,25 @@
 {
   "name": "full-stack-default-setup",
   "version": "1.0.0",
-  "description": "files and folders",
-  "main": "server/app.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server/app.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/PCSailor/full-stack-default-setup.git"
-  },
-  "author": "philip-curtis",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/PCSailor/full-stack-default-setup/issues"
-  },
-  "homepage": "https://github.com/PCSailor/full-stack-default-setup#readme",
+  "description": "readme.md",
+  "main": "index.js",
   "dependencies": {
     "angular": "^1.6.3",
     "angular-route": "^1.6.3",
     "body-parser": "^1.17.1",
     "bootstrap": "^3.3.7",
     "express": "^4.15.2",
-    "nodemon": "^1.11.0",
-    "path": "^0.12.7",
     "pg": "^6.1.4"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "n"
+  },
+  "author": "",
+  "license": "ISC"
 }

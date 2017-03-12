@@ -1,20 +1,16 @@
 var express = require('express');
-var app = express();
-app.use(express.static('server/public'));
-
 var bodyParser = require('body-parser');
+var app = express();
+var path = require('path');
+var employeeRouter = require('./routes/employee');
+
+//middleware
+app.use(express.static('server/public'));
 app.use(bodyParser.json());
-// NOTE: or
 app.use(bodyParser.urlencoded({extended: true}));
 
-var path = require('path'); // NOTE: If required
+app.use('/employee', employeeRouter);
 
-// var someNameRouter = require('./routes/somePath');
-
-// NOTE: app.use lines are considered middleware
-
-// app.use('/somePath', someNameRouter);
-
-app.listen(5000, function() {
-  console.log("app.js loaded & server listening to port 5000");
+app.listen(3000, function() {
+  console.log('listening on 3000');
 });

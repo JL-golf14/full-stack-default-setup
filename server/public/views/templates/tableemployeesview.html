@@ -1,0 +1,23 @@
+<table>
+<thead>
+  <tr>
+<th>First Name</th>
+<th>Last Name</th>
+<th>job title</th>
+<th>job id</th>
+<th>annual Salary</th>
+<th>worked since</th>
+</tr>
+</thead>
+<tbody>
+  <tr ng-repeat="table in tec.employee.list">
+
+    <td>{{table.first_name}}</td>
+    <td>{{table.last_name}}</td>
+    <td>{{table.job_title}}</td>
+    <td>{{table.job_id}}</td>
+    <td>{{table.annual_salary}}</td>
+    <td>{{table.created_at| date:'yyyy-MM-dd'}}</td>
+  </tr>
+</tbody>
+</table>
