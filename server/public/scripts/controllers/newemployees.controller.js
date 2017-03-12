@@ -13,6 +13,9 @@ App.controller('NewEmployeeController', ['SalaryFactory', function(SalaryFactory
 SalaryFactory.addEmployee(self.newWorker);
     };
 
+    self.deleteEmployee = function(tableId) {
+      SalaryFactory.deleteEmployee(tableId);
+    };
 
 
 

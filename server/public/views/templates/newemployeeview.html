@@ -60,6 +60,7 @@
     <td>{{table.job_id}}</td>
     <td>{{table.annual_salary}}</td>
     <td>{{table.created_at| date:'yyyy-MM-dd'}}</td>
+    <td class="col-xs-3"><button ng-click="nec.deleteEmployee(table.id)" class="btn btn-danger">Delete</button></td>
   </tr>
 </tbody>
 </table>

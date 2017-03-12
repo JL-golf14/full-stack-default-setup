@@ -1,6 +1,6 @@
 
 App.controller('TableEmployeesController', ['SalaryFactory', function(SalaryFactory){
-  console.log('The tbaleemployees Controller was loaded');
+  console.log('The TableEmployeesController was loaded');
   var self = this;
 
 
@@ -10,6 +10,8 @@ App.controller('TableEmployeesController', ['SalaryFactory', function(SalaryFact
     self.addTask = function() {
   SalaryFactory.addTask(self.newTask);
     };
-
+    self.deleteEmployee = function(tableId) {
+      SalaryFactory.deleteEmployee(tableId);
+    };
 
 }]);
