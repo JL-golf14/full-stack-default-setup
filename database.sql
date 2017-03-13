@@ -20,3 +20,16 @@ VALUES
 ('brandon','weids','wellsFargo','901902909','$70000','3500'),
 ('John','fritz','bestbuy','111','$87000','3500'),
 ('mike','meyers','sql pro','2135','$140000','3890');
+
+
+
+CREATE TABLE monthly_expenses (
+    id SERIAL PRIMARY KEY,
+    month_costs VARCHAR(255)
+    );
+
+INSERT INTO monthly_expenses (month_costs)
+VALUES
+('35235'),
+('435435'),
+('325324');

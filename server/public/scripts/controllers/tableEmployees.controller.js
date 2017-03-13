@@ -10,7 +10,7 @@ App.controller('TableEmployeesController', ['SalaryFactory', function(SalaryFact
 
 
     self.nextMonth = function() {
-  SalaryFactory.nextMonth(self.monthlyCostInput);
+  SalaryFactory.nextMonth(self.monthlyCoster);
     };
 
 }]);

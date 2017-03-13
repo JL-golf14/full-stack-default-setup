@@ -36,11 +36,11 @@ function deleteEmployee(tableId){
   });
 }
 
-function nextMonth(monthlyCostInput) {
+function nextMonth(monthlyCoster) {
   $http({
     method: 'POST',
     url: '/employee/addMonth',
-    data: monthlyCostInput
+    data: monthlyCoster
   }).then(function(response) {
     console.log('new req', response);
     getApps();
@@ -56,7 +56,7 @@ function MonthlyCoster(employees){
   }
     return totalMonthlySalary;
   }
-  console.log("totalMonthlySalary",totalMonthlySalary);
+  console.log("employees.getMonthlyCosts",employees.getMonthlyCosts);
 
 
 
