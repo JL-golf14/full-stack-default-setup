@@ -58,6 +58,37 @@ router.post('/addWorker', function(req, res) {
   });
 });
 
+
+
+router.post('/addMonth', function(req, res) {
+  console.log('hit post route');
+  console.log('here is the body ->', req.body);
+
+  var monthObject = req.body;
+
+  pool.connect(function(err, client, done) {
+    if(err){
+      console.log(err);
+      res.sendStatus(500);
+    }else{
+      client.query('INSERT INTO monthly_expenses (month_costs) VALUES ($1);',
+        [monthObject.monthlyCostInput], function(err, result) {
+          done();
+          if(err){
+            console.log(err);
+            res.sendStatus(500);
+          }else{
+            res.sendStatus(201);
+          }
+      });
+    }
+  });
+});
+
+
+
+
+
 router.delete('/:id', function(req, res) {
   var employeeToDeleteId = req.params.id;
   console.log('hit delete route');

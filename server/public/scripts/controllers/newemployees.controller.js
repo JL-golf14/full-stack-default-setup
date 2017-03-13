@@ -4,7 +4,7 @@ App.controller('NewEmployeeController', ['SalaryFactory', function(SalaryFactory
   var self = this;
     self.employee = SalaryFactory.employees;
     self.newWorker = {};
-
+    self.totalMonthlySalary = SalaryFactory.totalMonthlySalary;
 
 
 
@@ -16,6 +16,8 @@ SalaryFactory.addEmployee(self.newWorker);
     self.deleteEmployee = function(tableId) {
       SalaryFactory.deleteEmployee(tableId);
     };
+
+
 
 
 

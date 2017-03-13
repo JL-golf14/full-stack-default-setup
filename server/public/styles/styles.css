@@ -4,6 +4,7 @@ body {
 
 
 th {
+  font-size: 24px;
   padding: 10px;
   margin: 40px;
 }
@@ -11,4 +12,9 @@ th {
 td {
 
   padding: 13px;
+}
+a{
+  padding-left: 30px;
+  font-size: 22px;
+  padding-top: 40px;
 }

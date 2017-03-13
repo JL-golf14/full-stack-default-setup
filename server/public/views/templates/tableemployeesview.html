@@ -1,4 +1,16 @@
-<table>
+<table align = "center">
+  <th>month</th> <th>monthly Cost</th>
+  <tr>
+    <td>March</td>
+    <td ng-model="monthlyCostInput">${{tec.employees.getMonthlyCosts}}</td> <td><button class="btn btn-default"  ng-click="tec.nextMonth()">end month</button></td>
+
+  </tr>
+
+</table>
+<br>
+<br>
+<br>
+<table align = "center">
 <thead>
   <tr>
 <th>First Name</th>
@@ -7,6 +19,7 @@
 <th>job id</th>
 <th>annual Salary</th>
 <th>updated on</th>
+<th>quick individual cost ref.</th>
 </tr>
 </thead>
 <tbody>
@@ -16,8 +29,9 @@
     <td>{{table.last_name}}</td>
     <td>{{table.job_title}}</td>
     <td>{{table.employee_id}}</td>
-    <td>{{table.annual_salary}}</td>
+    <td>${{table.annual_salary}}</td>
     <td>{{table.created_at| date:'yyyy-MM-dd'}}</td>
+    <td>${{table.annual_salary / 12}}</td>
   </tr>
 </tbody>
 </table>

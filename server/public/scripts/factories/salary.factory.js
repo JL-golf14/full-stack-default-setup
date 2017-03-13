@@ -1,5 +1,6 @@
 App.factory('SalaryFactory', ['$http', function($http) {
-
+var totalMonthlySalary = 0;
+var everyEmployeeCost = 0;
 var employees = { list: [] };
 // var newWorker = {};
 
@@ -9,8 +10,8 @@ function getApps() {
     method: 'GET',
     url: '/employee/employee',
   }).then(function(response) {
-    console.log('factory.js/response.data: ', response.data);
     employees.list = response.data;
+    employees.getMonthlyCosts = MonthlyCoster(employees);
 
   });
 }
@@ -34,12 +35,39 @@ function deleteEmployee(tableId){
     getApps();
   });
 }
+
+function nextMonth(monthlyCostInput) {
+  $http({
+    method: 'POST',
+    url: '/employee/addMonth',
+    data: monthlyCostInput
+  }).then(function(response) {
+    console.log('new req', response);
+    getApps();
+  });
+}
+
+
+
+function MonthlyCoster(employees){
+  for (var i = 0; i < employees.list.length; i++) {
+    totalMonthlySalary += parseInt(employees.list[i].annual_salary/12);
+
+  }
+    return totalMonthlySalary;
+  }
+  console.log("totalMonthlySalary",totalMonthlySalary);
+
+
+
+
+
 return {
 
   employees: employees,
-  // updateApps: getApps(),
+  nextMonth: nextMonth,
   addEmployee: addEmployee,
-  deleteEmployee: deleteEmployee
-
+  deleteEmployee: deleteEmployee,
+  totalMonthlySalary: totalMonthlySalary
 };
 }]);
